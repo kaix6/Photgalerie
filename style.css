@@ -314,6 +314,15 @@ a:disabled {
     margin-right: 10px;
     margin-left: 10px;
   }
+
+  .spacer {
+    height: 1px;
+    width: 250px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 370px) {
@@ -335,5 +344,18 @@ a:disabled {
   .photoButtons img {
     height: 14px;
     width: 14px;
+  }
+
+  .spacer {
+    height: 1px;
+    width: 180px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
   }
 }
