@@ -61,10 +61,9 @@ function loadOctober(imgContainer2) {
 }
 
 function showPhoto(number) {
-  const img = document.getElementById('photoScreen');
-  const all = document.getElementById('all');
-  img.innerHTML = `
-  <div class="screen"><img src="${imgArray[number]}"></div>
+  const img = document.getElementById("photoScreen");
+  const all = document.getElementById("all");
+  img.innerHTML = `<div class="screen"><img src="${imgArray[number]}"></div>
   <div class="photoButtons">
   <img src="img/share.svg">
   <img src="img/funnel.svg">
@@ -78,22 +77,20 @@ function showPhoto(number) {
   <div class="arrows">
   <img onclick="nextnPic()"src="img/arrow-left.svg" alt="">
   <img onclick="returnPic()"src="img/arrow-right.svg" alt="">
-</div>
-  `;
-  img.classList.remove('none');
-  all.classList.add('none');
+</div>`;
+  img.classList.remove("none");
+  all.classList.add("none");
 }
 
 function closePic() {
-  const img = document.getElementById('photoScreen');
-  img.classList.add('none');
-  all.classList.remove('none');
+  const img = document.getElementById("photoScreen");
+  img.classList.add("none");
+  all.classList.remove("none");
 }
 
 function showPhoto2(number) {
-  const img = document.getElementById('photoScreen');
-  img.innerHTML = `
-  <div class="screen"><img src="${imgArray2[number]}"></div>
+  const img = document.getElementById("photoScreen");
+  img.innerHTML = `<div class="screen"><img src="${imgArray2[number]}"></div>
   <div class="photoButtons">
   <img src="img/share.svg">
   <img src="img/funnel.svg">
@@ -107,17 +104,24 @@ function showPhoto2(number) {
   <div class="arrows">
   <img onclick="returnPic2()"src="img/arrow-left.svg" alt="">
   <img onclick="nextPic2()"src="img/arrow-right.svg" alt="">
-</div>
-  `;
-  img.classList.remove('none');
+</div>`;
+  img.classList.remove("none");
 }
 
-
-
 function nextPic() {
-  const img = document.getElementById('photoScreen');
+  const img = document.getElementById("photoScreen");
   currentImageIndex = (currentImageIndex + 1) % imgArray.length; // Circular increment
+  nextHtmlCodeSep(img);
+}
 
+function returnPic() {
+  const img = document.getElementById("photoScreen");
+  currentImageIndex =
+    (currentImageIndex - 1 + imgArray.length) % imgArray.length; // Circular decrement
+  returnHtmlCodeSep(img);
+}
+
+function nextHtmlCodeSep(img) {
   img.innerHTML = `
     <div class="screen"><img src="${imgArray[currentImageIndex]}"></div>
     <div class="photoButtons">
@@ -137,10 +141,7 @@ function nextPic() {
   `;
 }
 
-function returnPic() {
-  const img = document.getElementById('photoScreen');
-  currentImageIndex = (currentImageIndex - 1 + imgArray.length) % imgArray.length; // Circular decrement
-
+function returnHtmlCodeSep(img) {
   img.innerHTML = `
     <div class="screen"><img src="${imgArray[currentImageIndex]}"></div>
     <div class="photoButtons">
@@ -161,32 +162,39 @@ function returnPic() {
 }
 
 function nextPic2() {
-  const img = document.getElementById('photoScreen');
+  const img = document.getElementById("photoScreen");
   currentImageIndex2 = (currentImageIndex2 + 1) % imgArray2.length; // Circular increment
-
-  img.innerHTML = `
-    <div class="screen"><img src="${imgArray2[currentImageIndex2]}"></div>
-    <div class="photoButtons">
-      <img src="img/share.svg">
-      <img src="img/funnel.svg">
-      <img src="img/zoom-in.svg">
-      <img src="img/info-circle.svg">
-      <img src="img/star.svg">
-      <img src="img/trash3.svg">
-      <img src="img/three-dots-vertical.svg">
-    </div>
-    <div onclick="closePic()" class="xButton"><img src="img/x.svg"></div>
-    <div class="arrows">
-      <img onclick="returnPic2()" src="img/arrow-left.svg" alt="">
-      <img onclick="nextPic2()" src="img/arrow-right.svg" alt="">
-    </div>
-  `;
+  nextHtmlCodeOct(img);
 }
 
 function returnPic2() {
-  const img = document.getElementById('photoScreen');
-  currentImageIndex2 = (currentImageIndex2 - 1 + imgArray2.length) % imgArray2.length; // Circular decrement
+  const img = document.getElementById("photoScreen");
+  currentImageIndex2 =
+    (currentImageIndex2 - 1 + imgArray2.length) % imgArray2.length; // Circular decrement
+  returnHtmlCodeOct(img);
+}
 
+function nextHtmlCodeOct(img) {
+  img.innerHTML = `
+  <div class="screen"><img src="${imgArray2[currentImageIndex2]}"></div>
+  <div class="photoButtons">
+    <img src="img/share.svg">
+    <img src="img/funnel.svg">
+    <img src="img/zoom-in.svg">
+    <img src="img/info-circle.svg">
+    <img src="img/star.svg">
+    <img src="img/trash3.svg">
+    <img src="img/three-dots-vertical.svg">
+  </div>
+  <div onclick="closePic()" class="xButton"><img src="img/x.svg"></div>
+  <div class="arrows">
+    <img onclick="returnPic2()" src="img/arrow-left.svg" alt="">
+    <img onclick="nextPic2()" src="img/arrow-right.svg" alt="">
+  </div>
+`;
+}
+
+function returnHtmlCodeOct(img) {
   img.innerHTML = `
     <div class="screen"><img src="${imgArray2[currentImageIndex2]}"></div>
     <div class="photoButtons">
