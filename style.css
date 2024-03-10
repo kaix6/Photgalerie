@@ -22,6 +22,7 @@ img {
 .imgcontainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .alles {
@@ -44,7 +45,6 @@ img:hover {
 .complete {
   display: flex;
   flex-direction: column;
-  margin-right: 40px;
 }
 
 .nav {
@@ -164,7 +164,7 @@ a:disabled {
   justify-content: center;
 }
 
-.screen img:hover{
+.screen img:hover {
   opacity: 1;
 }
 
@@ -196,4 +196,114 @@ a:disabled {
   height: 25px;
   width: 25px;
   padding-left: 20px;
+}
+
+.arrows {
+  filter: invert(93%) sepia(0%) saturate(26%) hue-rotate(22deg) brightness(106%)
+    contrast(106%);
+  z-index: 1;
+  position: absolute;
+top: 50vh;
+width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrows img {
+  height: 25px;
+  width: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media(max-width: 1080px) {
+  img {
+    height: 150px;
+    width: 170px;
+    object-fit: cover;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    opacity: 1;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  .alles {
+    flex-direction: column;
+  }
+
+  .nav {
+    padding: 0;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media(max-width:540px) {
+  img {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    opacity: 1;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+  .arrows img {
+    height: 16px;
+    width: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .xButton img {
+    height: 16px;
+    width: 16px;
+  }
+
+  .photoButtons img {
+    height: 16px;
+    width: 16px;
+  }
+  
+}
+
+@media(max-width:370px) {
+  .nav a {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .arrows img {
+    height: 14px;
+    width: 14px;
+  }
+
+  .xButton img {
+    height: 14px;
+    width: 14px;
+  }
+
+  .photoButtons img {
+    height: 14px;
+    width: 14px;
+  }
 }
