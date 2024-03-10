@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotogalerie</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body onload="render()">
+    <h1 class="headline">Deine Fotogalerie</h1>
+    <div class="alles">
+      <div class="nav">
+        <a href="#">Neuste</a>
+        <a href="#">Album</a>
+        <a href="#">Papierkorb</a>
+      </div>
+      <div class="complete">
+        <div class="container">
+          <h2>September</h2>
+          <div class="imgcontainer" id="imgcontainer"></div>
+        </div>
+        <h2>Oktober</h2>
+        <div class="imgcontainer" id="imgcontainer2"></div>
+      </div>
+    </div>
+
+    <div id="photoScreen" class="showOnePicture none"></div>
+  </body>
+</html>
